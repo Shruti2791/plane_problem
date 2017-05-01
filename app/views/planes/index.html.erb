@@ -1,0 +1,6 @@
+<div>Planes List</div>
+<% @planes.each do |plane| %>
+  <div>
+    <%= link_to plane.name, plane_path(plane.id) %>
+  </div>
+<% end %>

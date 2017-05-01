@@ -1,0 +1,15 @@
+<div>
+  <%= nested_form_for @plane do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.fields_for :lanes do |lane_form| %>
+      <%= lane_form.label :row %>
+      <%= lane_form.text_field :row %>
+      <%= lane_form.label :column %>
+      <%= lane_form.text_field :column %>
+      <%= lane_form.link_to_remove "Remove this Lane" %>
+    <% end %>
+    <p><%= f.link_to_add "Add a Lane", :lanes %></p>
+    <%= f.submit %>
+    <% end %>
+</div>
